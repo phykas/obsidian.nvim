@@ -1935,7 +1935,7 @@ Client.daily_note_path = function(self, datetime)
 
   local id
   if self.opts.daily_notes.date_format ~= nil then
-    id = tostring(os.date(self.opts.daily_notes.date_format, datetime))
+    id = string.lower(tostring(os.date(self.opts.daily_notes.date_format, datetime)))
   else
     id = tostring(os.date("%Y-%m-%d", datetime))
   end
